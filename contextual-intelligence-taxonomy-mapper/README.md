@@ -38,7 +38,11 @@ This framework will analyze extracted text and images from webpages. Before impl
 ### **Pre-requisites**
 
 1. **AWS account**
-2. **Amazon S3 bucket** with the recommended folder structure below. You can name these folders as desired:
+2. **Content Taxonomy** To use the IAB Tech Lab Content Taxonomy you can download it [here](https://www.iab.com/guidelines/content-taxonomy/) and follow the steps below
+    1. Click on 'Download via Tech lab'
+    2. Select 'Download Content Taxonomy 3.0'
+    3. The download will be an Excel file. You will need to delete rows 1-6 on the ‘Content taxonomy’ sheet and store it as a csv in your Amazon S3 bucket
+3. **Amazon S3 bucket** with the recommended folder structure below. You can name these folders as desired:
     1. Taxonomy: A folder where you store your chosen content taxonomy
     2. Texts: A folder where you store all extracted text content as text files
     3. Images: A folder where you store all extracted images
@@ -52,7 +56,7 @@ This framework will analyze extracted text and images from webpages. Before impl
     Recommendation: If you are analyzing text and image content from web pages, store your content in such a way that you can accurately associate each image with the text it was associated to on the webpage. For example, if text extracted from a webpage is stored as ’a-walk-in-the-park.txt,’ store all images from that webpage as ‘a-walk-in-the-park_00.jpg,’ ‘a-walk-in-the-park_01.jpg,’ etc. 
 
 
-3. **Amazon SageMaker notebook instance** with the following selections:
+4. **Amazon SageMaker notebook instance** with the following selections:
     1. Platform Identifier: Select Amazon Linux 2, Jupiter Lab 1
     2. IAM Role: Create a new SageMaker Execution role with full access to the bucket where you are storing your content. Once created, take note of the name of this role
 
@@ -63,7 +67,7 @@ This framework will analyze extracted text and images from webpages. Before impl
     For help on how to create a SageMaker notebook instance, click [here](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-setup-working-env.html.). The recommended kernel to run the code is conda_pytorch_p38
 
 
-4. **Additional IAM settings.** The SageMaker Execution role attached to your notebook instance will need additional permissions.  Navigate to ‘Identity and Access Management (IAM)’ and follow these steps:
+5. **Additional IAM settings.** The SageMaker Execution role attached to your notebook instance will need additional permissions.  Navigate to ‘Identity and Access Management (IAM)’ and follow these steps:
     1. Select **Roles** from the left menu bar and locate your SageMaker Execution role
     2. Ensure the following permission policies are attached to your SageMaker Execution role
         1. AmazonS3FullAccess: Add this permission if you will be testing CITM code on content that is stored in multiple Amazon S3 buckets
