@@ -9,7 +9,7 @@ The underlying code for CITM is presented here as an Amazon SageMaker notebook t
 
 You can use CITM and extend it to other industry scenarios. For example, education technology companies can use it to map their content to industry taxonomies.
 
-For a technical deep dive on Contextual Intelligence Taxonomy Mapper, read the supplemental AWS Machine Learning blog.
+For a technical deep dive on Contextual Intelligence Taxonomy Mapper, read the supplemental [AWS Machine Learning blog](https://aws.amazon.com/blogs/machine-learning/build-taxonomy-based-contextual-targeting-using-aws-media-intelligence-and-hugging-face-bert/).
 
 ## **Solution Overview**
 
